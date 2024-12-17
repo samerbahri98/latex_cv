@@ -4,7 +4,7 @@
 \setaddress{Budapest/Hungary}
 \setmobile{+36 20 433 6216}
 \setmail{samer.bahri@ieee.org}
-\setposition{DevOps Engineer} %ignored for now
+\setposition{DevOps Engineer}
 \setlinkedinaccount{https://www.linkedin.com/in/samerbahri/} %you can play with color of the template (red is also nice..)
 \setgithubaccount{https://github.com/samerbahri98/} %you can play with color of the template (red is also nice..)
 \setthemecolor{red} %you can play with color of the template (red is also nice..)
@@ -33,9 +33,15 @@ I am a Tunisian DevOps Engineer based in Hungary, with 3 years of experience spe
      Took over responsabilities related to a Kubernetes microservice architecture, design and implementation details\\
      %
      \coloredbullet\ %
-     Refactored the testing framework for a Kubernetes microservice
+     Refactored the testing framework for a Kubernetes microservice \\
      %
-     }
+     \coloredbullet\ %
+     Was a spoc for different technical stakeholders \\
+     %
+     \coloredbullet\ %
+     Was a deputee for the scrum master and the product owner during absences
+     %
+     }\\
     %
     \datedexperience{Software Engineering Intern \cpshalf Continental AG}{2022-2023 / Hungary} 
     \explanationdetail{\coloredbullet\ %
@@ -44,25 +50,60 @@ I am a Tunisian DevOps Engineer based in Hungary, with 3 years of experience spe
      \coloredbullet\ %
      Took part in Infrastructure and DevOps/MLOps improvements for the AI training cluster
      %
-     }
+     }\\
     %
     \datedexperience{Customer Care Intern \cpshalf Suez}{2019-2020 / Hungary} 
     \explanationdetail{\coloredbullet\ %
     Handled SalesForce and SAP customer success cases\\
     %
     \coloredbullet\ %
-    automated invoice email sending with python
+    Automated invoice email sending with python
     %
     }
+%
+% Projects and Contributions
+\section{Contributions}
+    \newcommand{\contribone}{%
+    Implemented the backup and restore feature in Ansible Semaphore \githuburl{https://github.com/semaphoreui/semaphore/pull/1748}
+    }
+    %
+    \newcommand{\contribtwo}{%
+    Created a Middleware Plugin for Traefik to sign http requests with AWS credentials \githuburl{https://github.com/samerbahri98/sigv4middleware} \weburl{https://plugins.traefik.io/plugins/66c3dc9756a08f9dd36344f5/aws-sigv4-auth}
+    }
+    %
+    \newcommand{\contribthree}{%
+    Fixed a minor bug in Vultr Ansible Collection \githuburl{https://github.com/vultr/ansible-collection-vultr/pull/106}
+    }
+    \newcommand{\listofcontrib}{\contribone, \contribtwo, \contribthree}
+    %
+    \createbullets{\listofcontrib}
+%
+% Projects
+\section{Projects}
+    \newcommand{\projectone}{%
+    \textbf{Breen} \cpshalf An MLOps platform on Kubernetes \githuburl{https://github.com/samerbahri98/mldp}
+    }
+    %
+    \newcommand{\projectthree}{%
+    \textbf{Vault} \cpshalf A password manager \githuburl{https://github.com/samerbahri98/Passmanager}
+    }
+    %
+    \newcommand{\projecttwo}{%
+    \textbf{SCM} \cpshalf A Git Repository Manager  \githuburl{https://github.com/samerbahri98/version-controller}
+    }
+    %
+    \newcommand{\listofProjects}{\projectone, \projecttwo, \projectthree }
+    %
+    \createbullets{\listofProjects}
 %
 %Education
 \section{Education and  Certifications} 
     %
     \datedexperience{BSc in Computer Engineering}{January 2023}
-    \explanation{Budapest University of Technology and Economics} 
+    \explanation{Budapest University of Technology and Economics}
     %
     \datedexperience{Certified Kubernetes Application Developer (CKAD)}{October 2023}
-    \explanation{The Linux Foundation} 
+    \explanation{The Linux Foundation}
     %
     \datedexperience{Fundamentals of Deep Learning}{April 2022}
     \explanation{Nvidia} 
@@ -75,34 +116,34 @@ I am a Tunisian DevOps Engineer based in Hungary, with 3 years of experience spe
     %
     \newcommand{\skilltwo}{\createskill{Software Development}{Bash \cpshalf GIT \cpshalf GitHub \cpshalf Jenkins \cpshalf GNU Make \cpshalf pnpm \cpshalf vite}}
     %
-    \newcommand{\skillthree}{\createskill{Frameworks \ \& \ Libraries}{React \cpshalf Express \cpshalf Flask \cpshalf Robot Framework \cpshalf Pytest \cpshalf Tensorflow }}
+    \newcommand{\skillfour}{\createskill{Frameworks \ \& \ Libraries}{React \cpshalf Express \cpshalf Flask \cpshalf Robot Framework \cpshalf Pytest \cpshalf Tensorflow }}
     %
-    \newcommand{\skillfour}{\createskill{Cloud Technologies}{Docker \cpshalf Kubernetes \cpshalf Helm \cpshalf AWS \cpshalf Terraform \cpshalf Ansible}}
+    \newcommand{\skillthree}{\createskill{Cloud Technologies}{Docker \cpshalf Kubernetes \cpshalf Helm \cpshalf AWS \cpshalf Terraform \cpshalf Ansible}}
     %
-    \newcommand{\skillfive}{\createskill{Soft Skills}{Project Management \cpshalf Cross-team coordination \cpshalf Agile Methodologies \cpshalf Conducting Presentations}}
+    \newcommand{\skillfive}{\createskill{Soft Skills}{Project Management \cpshalf Cross-team coordination \cpshalf Agile Methodologies \cpshalf Presentations}}
     %
     \newcommand{\skillsix}{\createskill{Languages}{\textbf{\emph{Native:}} \ \  Arabic \ \ \textbf{\emph{Fluent:}} \ \ English, French \ \ \textbf{\emph{Beginner:}} \ \  Swedish }}
     %
     \createskills{\skillone, \skilltwo, \skillthree, \skillfour, \skillfive, \skillsix}
 %
-% Experience
-\section{Extra}
-    \newcommand{\extraone}{%
-    \lipsum[1][9-10]\par
-    }
-    %
-    \newcommand{\extratwo}{%
-    \lipsum[1][9-10]\par %replace this part with actual text
-    }
-    %
-    \newcommand{\extrathree}{%
-    \lipsum[1][11-12]%replace this part with actual text
-    }
-    %
-    \newcommand{\listofextras}{\extraone, \extratwo, \extrathree}
-    %
-    \createbullets{\listofextras}
-%
+% % Experience
+% \section{Extra}
+%     \newcommand{\extraone}{%
+%     \lipsum[1][9-10]\par
+%     }
+%     %
+%     \newcommand{\extratwo}{%
+%     \lipsum[1][9-10]\par %replace this part with actual text
+%     }
+%     %
+%     \newcommand{\extrathree}{%
+%     \lipsum[1][11-12]%replace this part with actual text
+%     }
+%     %
+%     \newcommand{\listofextras}{\extraone, \extratwo, \extrathree}
+%     %
+%     \createbullets{\listofextras}
+% %
 %Footnote
 \createfootnote
 \end{document}

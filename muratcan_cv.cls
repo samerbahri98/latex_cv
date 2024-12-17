@@ -7,7 +7,6 @@
 \LoadClass[11pt]{article}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{muratcan_cv}[2020/04/15 Muratcan CV Class]
-\RequirePackage[sfdefault]{noto}
 \RequirePackage{etoolbox}
 \RequirePackage{pgffor}
 \RequirePackage{titlesec}
@@ -50,12 +49,14 @@
 
 % can makebox also be used?
 \newcommand\headerview{
-\begin{minipage}{0.25\linewidth}
+\begin{minipage}{0.2\linewidth}
     \profpic{0.22}{images/profilepicture}
 \end{minipage}% 
-\hfill
+{\color{\@themecolor}\vline}
+\hspace{0.05\textwidth}
 \begin{minipage}{0.45\linewidth}
-    \center \name \\[0.05cm] 
+    \ragged  \name \\[0.05cm]
+    \@position \\
     \contact % address \ mobile \\ mail
 \end{minipage}
 }
@@ -76,19 +77,19 @@
 %contactsubviews 
     
     
-\newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize linkedin}}
-\newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize github}}
+\newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize /in/samerbahri}}
+\newcommand{\linkedinview}{\href{\@githubaccount}{\faGithub\ \footnotesize /samerbahri98}}
 
 \newcommand{\name}{%
-    {\large \@firstname \ \textsc{\@lastname}}
+    {\large \textbf {\@firstname \ \textsc{\@lastname}}}
 }
 
 \newcommand{\contact}{%
-        {\small \@address  \cps \@mobile \\ \@mail%
+        {\footnotesize{ \@address  \\ \@mobile  \cps \@mail}%
         \\%
-        \linkedinview \cps \githubview \\ 
-        } % 
-}
+        \footnotesize{ \linkedinview \cps \githubview} \\ 
+        }} % 
+
 
 % Covverletterview
 
@@ -130,7 +131,7 @@ Position: & \@claimedposition \\
 
 % Textview commands
 
-\newcommand{\experience}[2]{%
+\newcommand{\experience}[1]{%
   \mbox { \hspace{1em} \scshape \textbf{#1} }%
 }
 
@@ -197,4 +198,11 @@ Position: & \@claimedposition \\
     \renewcommand\footnoterule{\rule{0.3\linewidth}{0.5pt}}
     \let\thefootnote\relax\footnote{\today\ / \href{https://github.com/samerbahri98/latex_cv}{source code}}}
 
-
+\newcommand{\githuburl}[1]{%
+  \href{#1}{\faGithub}
+}
+  
+\newcommand{\weburl}[1]{%
+  \href{#1}{\faGlobe}
+}
+  
