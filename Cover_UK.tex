@@ -1,0 +1,164 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair (Modified for Cover Letter by T3 Chat)
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% Inherit font style if you have specific font files; otherwise, comment out
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip}
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry} % Keep same scaling as CV
+
+%tabularx environment
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+
+%custom \section - Keeping consistent section formatting, though less used in CL
+\usepackage{titlesec}
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0,0}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+%for social icons (if you want to include them in the sender address, mirroring CV)
+\usepackage{fontawesome5}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty}
+
+%----------------------------------------------------------------------------------------
+%	SENDER INFORMATION (YOUR DETAILS)
+%----------------------------------------------------------------------------------------
+
+% Mimicking the CV's header for your personal contact information
+\begin{tabularx}{\linewidth}{@{} C @{}}
+    \Huge{Samer Bahri} \\[7.5pt]
+    \href{https://github.com/samerbahri98}{\raisebox{-0.05\height}\faGithub\ /samerbahri98} \ $|$ \ 
+    \href{https://linkedin.com/in/samerbahri}{\raisebox{-0.05\height}\faLinkedin\ /in/samerbahri} \ $|$ \ 
+    \href{mailto:samer.bahri@thebahrimedia.com}{\raisebox{-0.05\height}\faEnvelope \ samer.bahri@thebahrimedia.com} \ $|$ \ 
+    \href{tel:+36204336216}{\raisebox{-0.05\height}\faMobile \ +36 20 433 6216} \\
+    \end{tabularx}
+
+\noindent\rule{\linewidth}{0.1pt}
+
+\vspace{20pt} % Space between your details and date
+
+%----------------------------------------------------------------------------------------
+%	DATE AND RECIPIENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\normalsize
+\today
+
+\vspace{10pt}
+
+Hiring Manager\\
+[Viridien]\\
+[Company Address]\\
+[City, Postal Code]
+
+\vspace{20pt}
+
+%----------------------------------------------------------------------------------------
+%	SALUTATION AND SUBJECT
+%----------------------------------------------------------------------------------------
+
+Dear [Mr./Ms./Mx. Last Name, or Hiring Manager if name unknown],
+
+\vspace{10pt}
+
+\textbf{Subject: Application for the [Job Title] Position}
+
+\vspace{15pt} % More space before the main body
+
+%----------------------------------------------------------------------------------------
+%	BODY OF THE COVER LETTER
+%----------------------------------------------------------------------------------------
+
+% Paragraph 1: Introduction - State the position you are applying for, where you saw it, and a brief statement of your enthusiasm and suitability.
+I am writing to express my keen interest in the [Job Title] position at [Company Name], as advertised on [Platform where you saw the advertisement, e.g., LinkedIn, company website, university career portal]. With my background in [Your Field/Key Skill], I am confident that my skills and experience align well with the requirements of this role and your company's mission.
+
+\vspace{10pt}
+
+% Paragraph 2: Highlight Key Experiences/Skills - Connect your CV experiences to the job requirements. Use 1-2 examples. This is where you elaborate on the "Summary" in your CV.
+During my time at [Previous Company/University Project], I [achieved X by doing Y, relevant to the job]. For example, [detail a specific accomplishment, quantifiable if possible, and how it relates to the job description]. My experience with [Specific Skill/Technology] has equipped me with a strong foundation in [Area of Expertise], which I believe would be directly transferable to this role.
+
+\vspace{10pt}
+
+% Paragraph 3: Why This Company/Role? - Demonstrate your research and genuine interest in the company and the specific role. What attracts you?
+I am particularly drawn to [Company Name]'s commitment to [mention a specific company value, project, or recent achievement that resonates with you]. The opportunity to [mention a specific aspect of the job or company culture that excites you] is especially appealing, and I am eager to contribute to your team's success in [specific area].
+
+\vspace{10pt}
+
+% Paragraph 4: Conclusion - Reiterate interest, call to action, and express eagerness for an interview.
+My enclosed CV provides further detail on my qualifications and achievements. I am enthusiastic about the possibility of contributing to [Company Name] and am eager to discuss how my [relevant skills, e.g., problem-solving abilities, technical expertise] can benefit your team. Thank you for your time and consideration. I look forward to hearing from you soon.
+
+\vspace{20pt}
+
+%----------------------------------------------------------------------------------------
+%	CLOSING
+%----------------------------------------------------------------------------------------
+
+Sincerely,
+
+\vspace{30pt} % Space for signature if printing, or just a gap before your typed name
+
+Your Name
+
+%----------------------------------------------------------------------------------------
+%	END DOCUMENT
+%----------------------------------------------------------------------------------------
+\end{document}

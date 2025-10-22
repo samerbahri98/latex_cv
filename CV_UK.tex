@@ -1,0 +1,225 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,11pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0,0}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+\newcommand{\datedexperience}[2]{%
+\begin{small} \mbox { \hspace{0.3em} \scshape \textbf{#1} } \end{small} \hfill \datetext{#2}\\
+}
+\newcommand{\explanation}[1]{%
+\begin{small} \mbox { \scshape \hspace{0.5em} \footnotesize #1} \end{small}\\
+}
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Samer Bahri} \\[7.5pt]
+\href{https://github.com/samerbahri98}{\raisebox{-0.05\height}\faGithub\ /samerbahri98} \ $|$ \ 
+\href{https://linkedin.com/in/samerbahri}{\raisebox{-0.05\height}\faLinkedin\ /in/samerbahri} \ $|$ \ 
+\href{mailto:samer.bahri@thebahrimedia.com}{\raisebox{-0.05\height}\faEnvelope \ samer.bahri@thebahrimedia.com} \ $|$ \ 
+\href{tel:+36204336216}{\raisebox{-0.05\height}\faMobile \ +36 20 433 6216} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Experience
+\section{Work Experience}
+
+\begin{joblong}{Senior DevOps Engineer | Ericsson}{2025 - present}
+\item Designed and Implemented System Tests and Continuous Integration on several internally developed cloud services on Kubernetes (Object Storage, Kafka, Redis) for our Application Development Platform
+\item Developed an AI agent to analyze Jenkins pipeline logs using LLMs
+\item Was a deputee for the scrum master during their absences
+\end{joblong}
+
+
+\begin{joblong}{DevOps Engineer | Ericsson }{2023 - 2025}
+\item Handled responsabilities related to Kubernetes, CI/CD and Cloud Object Storage for Packet Core and Application Development Platform
+\item Took over responsabilities related to a Kubernetes microservice architecture, design and implementation
+\item Refactored the testing framework for a Kubernetes microservice
+\item Was a technical contact for different technical stakeholders
+\end{joblong}
+
+\begin{joblong}{Software Engineering Intern | Continental AG }{2022 - 2023}
+\item Implemented features and bug fixes as well as CI/CD for the AI Development Platform on Kubernetes
+\item Took part in Infrastructure and DevOps/MLOps improvements for the AI training cluster
+\item Created a dashboard for the AI cluster operators to handle GPU allocations and quotas for different training projects
+\end{joblong}
+
+\begin{joblong}{Customer Care Intern | Suez}{2019 - 2020}
+\item Handled SalesForce and SAP customer success cases
+\item Automated invoice email sending with python
+\end{joblong}    
+\vspace{-1em} 
+
+%Projects
+\section{Contributions}
+\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt,label=--]
+\item Implemented the backup and restore feature in Ansible Semaphore \href{https://github.com/semaphoreui/semaphore/pull/1748}{\faGithub}
+\item Created a Middleware Plugin for Traefik to sign http requests with AWS credentials \href{https://plugins.traefik.io/plugins/66c3dc9756a08f9dd36344f5/aws-sigv4-auth}{\faGlobe} \href{https://github.com/samerbahri98/sigv4middleware}{\faGithub}
+\item Fixed a minor bug in Vultr Ansible Collection \href{https://github.com/vultr/ansible-collection-vultr/pull/106}{\faGithub}
+\end{itemize}
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education and Certifications}
+\datedexperience{BSc in Computer Engineering}{January 2023}
+\explanation{Budapest University of Technology and Economics}
+%
+\datedexperience{Certified Kubernetes Application Developer}{October 2023}
+\explanation{The Linux Foundation}
+%
+\datedexperience{Fundamentals of Deep Learning}{April 2022}
+\explanation{Nvidia} 
+\vspace{-1.5em} 
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Languages &  \normalsize{Python | Typescript | Javascript | Go}\\
+DevOps &  \normalsize{Bash | GIT | GitHub | Jenkins | GNU Make | pnpm | vite | Docker}\\  
+Frameworks  &  \normalsize{React | Express | Flask | Robot Framework | Pytest | Tensorflow | Langchain}\\  
+Cloud  &  \normalsize{Kubernetes | Helm | AWS | Terraform | Ansible | Grafana | ELK}\\  
+Soft Skills  &  \normalsize{Project Management | Cross-team coordination | Agile Methodologies | Presentations}\\  
+
+\end{tabularx}
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}
